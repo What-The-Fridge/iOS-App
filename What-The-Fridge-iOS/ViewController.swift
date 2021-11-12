@@ -51,20 +51,58 @@ class ViewController: UIViewController {
         
     }
     
+    
+    struct Response: Codable{
+        let message: String!
+        let status: String
+    }
+    
     func getRandomPhoto() {
         let urlString = URL(string: "https://dog.ceo/api/breeds/image/random")!
         var request = URLRequest(url: urlString)
         request.httpMethod = "GET"
         
-        
-        
-        var data1 = Data()
-        let _ = URLSession.shared.dataTask(with: request) {(data, response, error) in
-            guard let data = data else { return }
-            data1 = data
-            print("Data is: \(data1)!")
-        }
-        imageView.image = UIImage(data: data1)
+        var jsonResponse : Response?
+        URLSession.shared.dataTask(with: request) {(data, response, error) in
+            guard let data = data, error == nil else {
+                print("something went wrong")
+                return
+            }
+            
+            // have data
+            var result: Response?
+            
+            do {
+                result = try JSONDecoder().decode(Response.self, from: data)
+            } catch {
+                print("failed to convert \(error.localizedDescription)")
+            }
+            
+            // have json
+            guard let json = result else {
+                return
+            }
+            
+            jsonResponse = json
+            print(jsonResponse?.message! ?? "nothing here")
+            
+            // this is the default image
+            var url = URL(string: "https://images.dog.ceo/breeds/coonhound/n02089078_3821.jpg")
+            
+            // as long as the return message is not null or empty, assign the new image url to url variable
+            print(!(jsonResponse?.message ?? "").isEmpty)
+            if(!(jsonResponse?.message ?? "").isEmpty) {
+                print("here")
+                url = URL(string: (jsonResponse?.message)!)
+            }
+
+            DispatchQueue.global().async {
+                let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
+                DispatchQueue.main.async {
+                    self.imageView.image = UIImage(data: data!)
+                }
+            }
+        }.resume()
     }
 }
 
