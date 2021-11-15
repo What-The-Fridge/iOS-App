@@ -9,13 +9,17 @@
 /* Begin PBXBuildFile section */
 		8498C97D2731C40800F47F02 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8498C97C2731C40800F47F02 /* AppDelegate.swift */; };
 		8498C97F2731C40800F47F02 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8498C97E2731C40800F47F02 /* SceneDelegate.swift */; };
-		8498C9812731C40800F47F02 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8498C9802731C40800F47F02 /* ViewController.swift */; };
 		8498C9842731C40800F47F02 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8498C9822731C40800F47F02 /* Main.storyboard */; };
 		8498C9862731C40C00F47F02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8498C9852731C40C00F47F02 /* Assets.xcassets */; };
 		8498C9892731C40C00F47F02 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8498C9872731C40C00F47F02 /* LaunchScreen.storyboard */; };
 		8498C9942731C40C00F47F02 /* What_The_Fridge_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8498C9932731C40C00F47F02 /* What_The_Fridge_iOSTests.swift */; };
 		8498C99E2731C40C00F47F02 /* What_The_Fridge_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8498C99D2731C40C00F47F02 /* What_The_Fridge_iOSUITests.swift */; };
 		8498C9A02731C40C00F47F02 /* What_The_Fridge_iOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8498C99F2731C40C00F47F02 /* What_The_Fridge_iOSUITestsLaunchTests.swift */; };
+		84F1AA562740B882008A9D09 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F1AA552740B882008A9D09 /* SignUpViewController.swift */; };
+		84F1AA5B2740B955008A9D09 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F1AA5A2740B955008A9D09 /* HomeViewController.swift */; };
+		84F1AA5D27410C47008A9D09 /* RandomImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F1AA5C27410C47008A9D09 /* RandomImageViewController.swift */; };
+		84F1AA5F27410DE1008A9D09 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F1AA5E27410DE1008A9D09 /* ViewController.swift */; };
+		84F1AA61274115D3008A9D09 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F1AA60274115D3008A9D09 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +43,6 @@
 		8498C9792731C40800F47F02 /* What-The-Fridge-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "What-The-Fridge-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8498C97C2731C40800F47F02 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8498C97E2731C40800F47F02 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8498C9802731C40800F47F02 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8498C9832731C40800F47F02 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8498C9852731C40C00F47F02 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8498C9882731C40C00F47F02 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +52,11 @@
 		8498C9992731C40C00F47F02 /* What-The-Fridge-iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "What-The-Fridge-iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8498C99D2731C40C00F47F02 /* What_The_Fridge_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = What_The_Fridge_iOSUITests.swift; sourceTree = "<group>"; };
 		8498C99F2731C40C00F47F02 /* What_The_Fridge_iOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = What_The_Fridge_iOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		84F1AA552740B882008A9D09 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		84F1AA5A2740B955008A9D09 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		84F1AA5C27410C47008A9D09 /* RandomImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomImageViewController.swift; sourceTree = "<group>"; };
+		84F1AA5E27410DE1008A9D09 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		84F1AA60274115D3008A9D09 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,9 +107,9 @@
 		8498C97B2731C40800F47F02 /* What-The-Fridge-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				84F1AA592740B903008A9D09 /* View Controllers */,
 				8498C97C2731C40800F47F02 /* AppDelegate.swift */,
 				8498C97E2731C40800F47F02 /* SceneDelegate.swift */,
-				8498C9802731C40800F47F02 /* ViewController.swift */,
 				8498C9822731C40800F47F02 /* Main.storyboard */,
 				8498C9852731C40C00F47F02 /* Assets.xcassets */,
 				8498C9872731C40C00F47F02 /* LaunchScreen.storyboard */,
@@ -125,6 +133,18 @@
 				8498C99F2731C40C00F47F02 /* What_The_Fridge_iOSUITestsLaunchTests.swift */,
 			);
 			path = "What-The-Fridge-iOSUITests";
+			sourceTree = "<group>";
+		};
+		84F1AA592740B903008A9D09 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				84F1AA552740B882008A9D09 /* SignUpViewController.swift */,
+				84F1AA5A2740B955008A9D09 /* HomeViewController.swift */,
+				84F1AA5C27410C47008A9D09 /* RandomImageViewController.swift */,
+				84F1AA5E27410DE1008A9D09 /* ViewController.swift */,
+				84F1AA60274115D3008A9D09 /* LoginViewController.swift */,
+			);
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,9 +278,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8498C9812731C40800F47F02 /* ViewController.swift in Sources */,
+				84F1AA61274115D3008A9D09 /* LoginViewController.swift in Sources */,
+				84F1AA5D27410C47008A9D09 /* RandomImageViewController.swift in Sources */,
 				8498C97D2731C40800F47F02 /* AppDelegate.swift in Sources */,
+				84F1AA562740B882008A9D09 /* SignUpViewController.swift in Sources */,
+				84F1AA5F27410DE1008A9D09 /* ViewController.swift in Sources */,
 				8498C97F2731C40800F47F02 /* SceneDelegate.swift in Sources */,
+				84F1AA5B2740B955008A9D09 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
