@@ -11,9 +11,7 @@ class SignUpViewController: UIViewController {
 
     @IBOutlet weak var firstNameTextField: UITextField!
     
-    
     @IBOutlet weak var lastNameTextField: UITextField!
-    
     
     @IBOutlet weak var emailTextField: UITextField!
     
@@ -26,10 +24,22 @@ class SignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
+        setUpElements()
     }
     
+    func setUpElements() {
+        errorLabel.alpha = 90
+        
+        // style the elements
+        Utilities.styleTextField(firstNameTextField)
+        Utilities.styleTextField(lastNameTextField)
+        Utilities.styleTextField(emailTextField)
+        Utilities.styleTextField(passwordTextField)
+        Utilities.styleFilledButton(signUpButton)
+        
+    }
 
     /*
     // MARK: - Navigation
