@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		220B50BD275617AC002C3B19 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 220B50BC275617AC002C3B19 /* GoogleService-Info.plist */; };
+		6CE4E000DA432DDD967B5686 /* Pods_What_The_Fridge_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41667BCC68B8C0B57D5ED721 /* Pods_What_The_Fridge_iOSTests.framework */; };
 		845C3183275216750052828C /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845C3182275216750052828C /* Utilities.swift */; };
 		8498C97D2731C40800F47F02 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8498C97C2731C40800F47F02 /* AppDelegate.swift */; };
 		8498C97F2731C40800F47F02 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8498C97E2731C40800F47F02 /* SceneDelegate.swift */; };
@@ -21,6 +23,8 @@
 		84F1AA5D27410C47008A9D09 /* RandomImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F1AA5C27410C47008A9D09 /* RandomImageViewController.swift */; };
 		84F1AA5F27410DE1008A9D09 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F1AA5E27410DE1008A9D09 /* ViewController.swift */; };
 		84F1AA61274115D3008A9D09 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F1AA60274115D3008A9D09 /* LoginViewController.swift */; };
+		93DDFE237231564451CC03E0 /* Pods_What_The_Fridge_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4163486C6CEC20E7D2188C93 /* Pods_What_The_Fridge_iOS.framework */; };
+		EDE725974643DBD5FEC87DB1 /* Pods_What_The_Fridge_iOS_What_The_Fridge_iOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07914F0E43F5877FC02CDECE /* Pods_What_The_Fridge_iOS_What_The_Fridge_iOSUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +45,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		07914F0E43F5877FC02CDECE /* Pods_What_The_Fridge_iOS_What_The_Fridge_iOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_What_The_Fridge_iOS_What_The_Fridge_iOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		220B50BC275617AC002C3B19 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4163486C6CEC20E7D2188C93 /* Pods_What_The_Fridge_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_What_The_Fridge_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		41667BCC68B8C0B57D5ED721 /* Pods_What_The_Fridge_iOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_What_The_Fridge_iOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4EBBB9ECD88B294982B85E23 /* Pods-What-The-Fridge-iOS-What-The-Fridge-iOSUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-What-The-Fridge-iOS-What-The-Fridge-iOSUITests.debug.xcconfig"; path = "Target Support Files/Pods-What-The-Fridge-iOS-What-The-Fridge-iOSUITests/Pods-What-The-Fridge-iOS-What-The-Fridge-iOSUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		71EB347EF45EC448441553C9 /* Pods-What-The-Fridge-iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-What-The-Fridge-iOSTests.debug.xcconfig"; path = "Target Support Files/Pods-What-The-Fridge-iOSTests/Pods-What-The-Fridge-iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		845C3182275216750052828C /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		8498C9792731C40800F47F02 /* What-The-Fridge-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "What-The-Fridge-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8498C97C2731C40800F47F02 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +69,10 @@
 		84F1AA5C27410C47008A9D09 /* RandomImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomImageViewController.swift; sourceTree = "<group>"; };
 		84F1AA5E27410DE1008A9D09 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		84F1AA60274115D3008A9D09 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		86FE661B86285BDE80CBA461 /* Pods-What-The-Fridge-iOS-What-The-Fridge-iOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-What-The-Fridge-iOS-What-The-Fridge-iOSUITests.release.xcconfig"; path = "Target Support Files/Pods-What-The-Fridge-iOS-What-The-Fridge-iOSUITests/Pods-What-The-Fridge-iOS-What-The-Fridge-iOSUITests.release.xcconfig"; sourceTree = "<group>"; };
+		8CF9D0C34A6BF8616524F812 /* Pods-What-The-Fridge-iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-What-The-Fridge-iOSTests.release.xcconfig"; path = "Target Support Files/Pods-What-The-Fridge-iOSTests/Pods-What-The-Fridge-iOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		8E612C4B3EA1F179309F5C2A /* Pods-What-The-Fridge-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-What-The-Fridge-iOS.release.xcconfig"; path = "Target Support Files/Pods-What-The-Fridge-iOS/Pods-What-The-Fridge-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		D20417A1D8A20B21CD1FD2F9 /* Pods-What-The-Fridge-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-What-The-Fridge-iOS.debug.xcconfig"; path = "Target Support Files/Pods-What-The-Fridge-iOS/Pods-What-The-Fridge-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93DDFE237231564451CC03E0 /* Pods_What_The_Fridge_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6CE4E000DA432DDD967B5686 /* Pods_What_The_Fridge_iOSTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDE725974643DBD5FEC87DB1 /* Pods_What_The_Fridge_iOS_What_The_Fridge_iOSUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,6 +118,8 @@
 				8498C9922731C40C00F47F02 /* What-The-Fridge-iOSTests */,
 				8498C99C2731C40C00F47F02 /* What-The-Fridge-iOSUITests */,
 				8498C97A2731C40800F47F02 /* Products */,
+				A37E415A0779CFDA727158D9 /* Pods */,
+				EC30EAFA25972E0DE9D645BA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -117,12 +136,13 @@
 		8498C97B2731C40800F47F02 /* What-The-Fridge-iOS */ = {
 			isa = PBXGroup;
 			children = (
-				845C3181275213DF0052828C /* Helpers */,
-				84F1AA592740B903008A9D09 /* View Controllers */,
 				8498C97C2731C40800F47F02 /* AppDelegate.swift */,
 				8498C97E2731C40800F47F02 /* SceneDelegate.swift */,
+				845C3181275213DF0052828C /* Helpers */,
+				84F1AA592740B903008A9D09 /* View Controllers */,
 				8498C9822731C40800F47F02 /* Main.storyboard */,
 				8498C9852731C40C00F47F02 /* Assets.xcassets */,
+				220B50BC275617AC002C3B19 /* GoogleService-Info.plist */,
 				8498C9872731C40C00F47F02 /* LaunchScreen.storyboard */,
 				8498C98A2731C40C00F47F02 /* Info.plist */,
 			);
@@ -158,6 +178,29 @@
 			path = "View Controllers";
 			sourceTree = "<group>";
 		};
+		A37E415A0779CFDA727158D9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D20417A1D8A20B21CD1FD2F9 /* Pods-What-The-Fridge-iOS.debug.xcconfig */,
+				8E612C4B3EA1F179309F5C2A /* Pods-What-The-Fridge-iOS.release.xcconfig */,
+				4EBBB9ECD88B294982B85E23 /* Pods-What-The-Fridge-iOS-What-The-Fridge-iOSUITests.debug.xcconfig */,
+				86FE661B86285BDE80CBA461 /* Pods-What-The-Fridge-iOS-What-The-Fridge-iOSUITests.release.xcconfig */,
+				71EB347EF45EC448441553C9 /* Pods-What-The-Fridge-iOSTests.debug.xcconfig */,
+				8CF9D0C34A6BF8616524F812 /* Pods-What-The-Fridge-iOSTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		EC30EAFA25972E0DE9D645BA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4163486C6CEC20E7D2188C93 /* Pods_What_The_Fridge_iOS.framework */,
+				07914F0E43F5877FC02CDECE /* Pods_What_The_Fridge_iOS_What_The_Fridge_iOSUITests.framework */,
+				41667BCC68B8C0B57D5ED721 /* Pods_What_The_Fridge_iOSTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -165,9 +208,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8498C9A32731C40C00F47F02 /* Build configuration list for PBXNativeTarget "What-The-Fridge-iOS" */;
 			buildPhases = (
+				2F01EEC29A51D1E16A5C64FC /* [CP] Check Pods Manifest.lock */,
 				8498C9752731C40800F47F02 /* Sources */,
 				8498C9762731C40800F47F02 /* Frameworks */,
 				8498C9772731C40800F47F02 /* Resources */,
+				533839C87CF18DA70C1B394C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -182,6 +227,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8498C9A62731C40C00F47F02 /* Build configuration list for PBXNativeTarget "What-The-Fridge-iOSTests" */;
 			buildPhases = (
+				E86F53349A30483F161B720F /* [CP] Check Pods Manifest.lock */,
 				8498C98B2731C40C00F47F02 /* Sources */,
 				8498C98C2731C40C00F47F02 /* Frameworks */,
 				8498C98D2731C40C00F47F02 /* Resources */,
@@ -200,9 +246,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8498C9A92731C40C00F47F02 /* Build configuration list for PBXNativeTarget "What-The-Fridge-iOSUITests" */;
 			buildPhases = (
+				3EC27B08DB494CED710887AE /* [CP] Check Pods Manifest.lock */,
 				8498C9952731C40C00F47F02 /* Sources */,
 				8498C9962731C40C00F47F02 /* Frameworks */,
 				8498C9972731C40C00F47F02 /* Resources */,
+				3DBF33BE687DE6B65DD912BC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -263,6 +311,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8498C9892731C40C00F47F02 /* LaunchScreen.storyboard in Resources */,
+				220B50BD275617AC002C3B19 /* GoogleService-Info.plist in Resources */,
 				8498C9862731C40C00F47F02 /* Assets.xcassets in Resources */,
 				8498C9842731C40800F47F02 /* Main.storyboard in Resources */,
 			);
@@ -283,6 +332,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2F01EEC29A51D1E16A5C64FC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-What-The-Fridge-iOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3DBF33BE687DE6B65DD912BC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-What-The-Fridge-iOS-What-The-Fridge-iOSUITests/Pods-What-The-Fridge-iOS-What-The-Fridge-iOSUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-What-The-Fridge-iOS-What-The-Fridge-iOSUITests/Pods-What-The-Fridge-iOS-What-The-Fridge-iOSUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-What-The-Fridge-iOS-What-The-Fridge-iOSUITests/Pods-What-The-Fridge-iOS-What-The-Fridge-iOSUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3EC27B08DB494CED710887AE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-What-The-Fridge-iOS-What-The-Fridge-iOSUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		533839C87CF18DA70C1B394C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-What-The-Fridge-iOS/Pods-What-The-Fridge-iOS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-What-The-Fridge-iOS/Pods-What-The-Fridge-iOS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-What-The-Fridge-iOS/Pods-What-The-Fridge-iOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E86F53349A30483F161B720F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-What-The-Fridge-iOSTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8498C9752731C40800F47F02 /* Sources */ = {
@@ -470,6 +622,7 @@
 		};
 		8498C9A42731C40C00F47F02 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D20417A1D8A20B21CD1FD2F9 /* Pods-What-The-Fridge-iOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -497,6 +650,7 @@
 		};
 		8498C9A52731C40C00F47F02 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8E612C4B3EA1F179309F5C2A /* Pods-What-The-Fridge-iOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -524,6 +678,7 @@
 		};
 		8498C9A72731C40C00F47F02 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 71EB347EF45EC448441553C9 /* Pods-What-The-Fridge-iOSTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -548,6 +703,7 @@
 		};
 		8498C9A82731C40C00F47F02 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8CF9D0C34A6BF8616524F812 /* Pods-What-The-Fridge-iOSTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -572,6 +728,7 @@
 		};
 		8498C9AA2731C40C00F47F02 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4EBBB9ECD88B294982B85E23 /* Pods-What-The-Fridge-iOS-What-The-Fridge-iOSUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -594,6 +751,7 @@
 		};
 		8498C9AB2731C40C00F47F02 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 86FE661B86285BDE80CBA461 /* Pods-What-The-Fridge-iOS-What-The-Fridge-iOSUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
