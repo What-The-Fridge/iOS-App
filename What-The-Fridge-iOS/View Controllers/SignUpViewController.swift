@@ -7,6 +7,7 @@
 import UIKit
 import FirebaseAuth
 import Firebase
+import FirebaseFirestore
 
 class SignUpViewController: UIViewController {
 
@@ -31,7 +32,7 @@ class SignUpViewController: UIViewController {
     }
     
     func setUpElements() {
-        errorLabel.alpha = 90
+        errorLabel.alpha = 0
         
         // style the elements
         Utilities.styleTextField(firstNameTextField)
@@ -41,36 +42,6 @@ class SignUpViewController: UIViewController {
         Utilities.styleFilledButton(signUpButton)
         
     }
-    
-    // check if the fields are valid. return nil on valid, Otherwise, return error
-    func validateFields() -> String? {
-        // Check if all fields are filled
-        if firstNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
-            lastNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
-            emailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
-            passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == ""
-            
-        {
-            return "Please fill out all the required fields"
-        }
-        
-        // Check if password is secure
-        let cleanedPassword = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-        
-        if Utilities.isPasswordValid(cleanedPassword) == false {
-            return "Please make sure your password is 8 characters, contains a special character and a number"
-        }
-        
-        return nil
-    }
-    
-    func showError(_ message: String) {
-        errorLabel.text = error!
-        errorLabel.alpha = 1
-    }
-    
-    func transitionToHome()
-    
     
     @IBAction func signUpTapped(_ sender: Any) {
         // Validate the fields
@@ -99,12 +70,41 @@ class SignUpViewController: UIViewController {
                         }
                     }
                     // Trasition to home screen
-                    
+                    self.transitionToHome()
                 }
             }
         }
-        
-        
     }
     
+    // check if the fields are valid. return nil on valid, Otherwise, return error
+    func validateFields() -> String? {
+        // Check if all fields are filled
+        if firstNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+            lastNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+            emailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+            passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == ""
+        {
+            return "Please fill out all the required fields"
+        }
+        
+        // Check if password is secure
+        let cleanedPassword = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        
+        if Utilities.isPasswordValid(cleanedPassword) == false {
+            return "Please make sure your password is 8 characters, contains a special character and a number"
+        }
+        
+        return nil
+    }
+    
+    func showError(_ message: String) {
+        errorLabel.text = message
+        errorLabel.alpha = 1
+    }
+    
+    func transitionToHome() {
+        let homeViewController = storyboard?.instantiateViewController(withIdentifier: Constants.StoryBoard.homeViewController) as? HomeViewController
+        view.window?.rootViewController = homeViewController
+        view.window?.makeKeyAndVisible()
+    }
 }

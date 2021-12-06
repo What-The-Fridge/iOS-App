@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		220B50BD275617AC002C3B19 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 220B50BC275617AC002C3B19 /* GoogleService-Info.plist */; };
+		227C8431275C8961007133A3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227C8430275C8961007133A3 /* Constants.swift */; };
 		6CE4E000DA432DDD967B5686 /* Pods_What_The_Fridge_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41667BCC68B8C0B57D5ED721 /* Pods_What_The_Fridge_iOSTests.framework */; };
 		845C3183275216750052828C /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845C3182275216750052828C /* Utilities.swift */; };
 		8498C97D2731C40800F47F02 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8498C97C2731C40800F47F02 /* AppDelegate.swift */; };
@@ -47,6 +48,7 @@
 /* Begin PBXFileReference section */
 		07914F0E43F5877FC02CDECE /* Pods_What_The_Fridge_iOS_What_The_Fridge_iOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_What_The_Fridge_iOS_What_The_Fridge_iOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		220B50BC275617AC002C3B19 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		227C8430275C8961007133A3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		4163486C6CEC20E7D2188C93 /* Pods_What_The_Fridge_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_What_The_Fridge_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		41667BCC68B8C0B57D5ED721 /* Pods_What_The_Fridge_iOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_What_The_Fridge_iOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EBBB9ECD88B294982B85E23 /* Pods-What-The-Fridge-iOS-What-The-Fridge-iOSUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-What-The-Fridge-iOS-What-The-Fridge-iOSUITests.debug.xcconfig"; path = "Target Support Files/Pods-What-The-Fridge-iOS-What-The-Fridge-iOSUITests/Pods-What-The-Fridge-iOS-What-The-Fridge-iOSUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				845C3182275216750052828C /* Utilities.swift */,
+				227C8430275C8961007133A3 /* Constants.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -449,6 +452,7 @@
 				8498C97F2731C40800F47F02 /* SceneDelegate.swift in Sources */,
 				845C3183275216750052828C /* Utilities.swift in Sources */,
 				84F1AA5B2740B955008A9D09 /* HomeViewController.swift in Sources */,
+				227C8431275C8961007133A3 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
