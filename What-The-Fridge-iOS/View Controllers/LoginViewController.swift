@@ -51,6 +51,15 @@ class LoginViewController: UIViewController {
                 if(err != nil) {
                     self.showError(err!.localizedDescription)
                 } else {
+                    let currentUser = Auth.auth().currentUser
+                    currentUser?.getIDTokenForcingRefresh(true) { idToken, error in
+                      if let error = error {
+                          self.showError(error.localizedDescription)
+                        return;
+                      }
+                      // Send token to your backend via HTTPS
+                        self.connectToBackend(token: idToken ?? "")
+                    }
                     self.transitionToHome()
                 }
             }
@@ -77,5 +86,25 @@ class LoginViewController: UIViewController {
         let homeViewController = storyboard?.instantiateViewController(withIdentifier: Constants.StoryBoard.homeViewController) as? HomeViewController
         view.window?.rootViewController = homeViewController
         view.window?.makeKeyAndVisible()
+    }
+    
+    struct Response: Codable{
+        let message: String!
+    }
+    
+    func connectToBackend(token: String) {
+        print("here")
+        let urlString = URL(string: "http://localhost:4000/auth/login")!
+        var request = URLRequest(url: urlString)
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        request.httpMethod = "POST"
+
+        URLSession.shared.dataTask(with: request) {(data, response, error) in
+            guard data == nil, error == nil else {
+                print("something went wrong")
+                return
+            }
+        }.resume()
     }
 }
