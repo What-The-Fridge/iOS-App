@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		220B50BD275617AC002C3B19 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 220B50BC275617AC002C3B19 /* GoogleService-Info.plist */; };
+		2244496A27604E0B002E3C5F /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = 2244496927604E0B002E3C5F /* schema.json */; };
 		227C8431275C8961007133A3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227C8430275C8961007133A3 /* Constants.swift */; };
 		6CE4E000DA432DDD967B5686 /* Pods_What_The_Fridge_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41667BCC68B8C0B57D5ED721 /* Pods_What_The_Fridge_iOSTests.framework */; };
 		845C3183275216750052828C /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845C3182275216750052828C /* Utilities.swift */; };
@@ -48,6 +49,7 @@
 /* Begin PBXFileReference section */
 		07914F0E43F5877FC02CDECE /* Pods_What_The_Fridge_iOS_What_The_Fridge_iOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_What_The_Fridge_iOS_What_The_Fridge_iOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		220B50BC275617AC002C3B19 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		2244496927604E0B002E3C5F /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
 		227C8430275C8961007133A3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		4163486C6CEC20E7D2188C93 /* Pods_What_The_Fridge_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_What_The_Fridge_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		41667BCC68B8C0B57D5ED721 /* Pods_What_The_Fridge_iOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_What_The_Fridge_iOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,6 +107,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2244496B27604F2C002E3C5F /* GraphQL */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = GraphQL;
+			sourceTree = "<group>";
+		};
 		845C3181275213DF0052828C /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -139,15 +148,17 @@
 		8498C97B2731C40800F47F02 /* What-The-Fridge-iOS */ = {
 			isa = PBXGroup;
 			children = (
-				8498C97C2731C40800F47F02 /* AppDelegate.swift */,
-				8498C97E2731C40800F47F02 /* SceneDelegate.swift */,
+				2244496B27604F2C002E3C5F /* GraphQL */,
 				845C3181275213DF0052828C /* Helpers */,
 				84F1AA592740B903008A9D09 /* View Controllers */,
+				8498C97C2731C40800F47F02 /* AppDelegate.swift */,
+				8498C97E2731C40800F47F02 /* SceneDelegate.swift */,
 				8498C9822731C40800F47F02 /* Main.storyboard */,
 				8498C9852731C40C00F47F02 /* Assets.xcassets */,
 				220B50BC275617AC002C3B19 /* GoogleService-Info.plist */,
 				8498C9872731C40C00F47F02 /* LaunchScreen.storyboard */,
 				8498C98A2731C40C00F47F02 /* Info.plist */,
+				2244496927604E0B002E3C5F /* schema.json */,
 			);
 			path = "What-The-Fridge-iOS";
 			sourceTree = "<group>";
@@ -314,6 +325,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8498C9892731C40C00F47F02 /* LaunchScreen.storyboard in Resources */,
+				2244496A27604E0B002E3C5F /* schema.json in Resources */,
 				220B50BD275617AC002C3B19 /* GoogleService-Info.plist in Resources */,
 				8498C9862731C40C00F47F02 /* Assets.xcassets in Resources */,
 				8498C9842731C40800F47F02 /* Main.storyboard in Resources */,
