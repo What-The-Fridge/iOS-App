@@ -18,6 +18,9 @@ target 'What-The-Fridge-iOS' do
   pod 'Firebase/Auth'
   pod 'Firebase/Core'
   pod 'Firebase/Firestore'
+  
+  # Apollo
+  pod 'Apollo'
 
   target 'What-The-Fridge-iOSTests' do
     inherit! :search_paths

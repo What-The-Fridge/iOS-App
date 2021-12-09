@@ -7,7 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		22065F5027620139004FFF9A /* Queries.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 22065F4F27620139004FFF9A /* Queries.graphql */; };
+		22065F52276201E1004FFF9A /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22065F51276201E1004FFF9A /* API.swift */; };
+		22065F5427620232004FFF9A /* Apollo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22065F5327620232004FFF9A /* Apollo.swift */; };
 		220B50BD275617AC002C3B19 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 220B50BC275617AC002C3B19 /* GoogleService-Info.plist */; };
+		2244496A27604E0B002E3C5F /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = 2244496927604E0B002E3C5F /* schema.json */; };
 		227C8431275C8961007133A3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227C8430275C8961007133A3 /* Constants.swift */; };
 		6CE4E000DA432DDD967B5686 /* Pods_What_The_Fridge_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41667BCC68B8C0B57D5ED721 /* Pods_What_The_Fridge_iOSTests.framework */; };
 		845C3183275216750052828C /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845C3182275216750052828C /* Utilities.swift */; };
@@ -47,7 +51,11 @@
 
 /* Begin PBXFileReference section */
 		07914F0E43F5877FC02CDECE /* Pods_What_The_Fridge_iOS_What_The_Fridge_iOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_What_The_Fridge_iOS_What_The_Fridge_iOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		22065F4F27620139004FFF9A /* Queries.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = Queries.graphql; sourceTree = "<group>"; };
+		22065F51276201E1004FFF9A /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = API.swift; path = "What-The-Fridge-iOS/API.swift"; sourceTree = SOURCE_ROOT; };
+		22065F5327620232004FFF9A /* Apollo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Apollo.swift; sourceTree = "<group>"; };
 		220B50BC275617AC002C3B19 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		2244496927604E0B002E3C5F /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
 		227C8430275C8961007133A3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		4163486C6CEC20E7D2188C93 /* Pods_What_The_Fridge_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_What_The_Fridge_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		41667BCC68B8C0B57D5ED721 /* Pods_What_The_Fridge_iOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_What_The_Fridge_iOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,6 +113,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2244496B27604F2C002E3C5F /* GraphQL */ = {
+			isa = PBXGroup;
+			children = (
+				22065F51276201E1004FFF9A /* API.swift */,
+				22065F4F27620139004FFF9A /* Queries.graphql */,
+				22065F5327620232004FFF9A /* Apollo.swift */,
+			);
+			path = GraphQL;
+			sourceTree = "<group>";
+		};
 		845C3181275213DF0052828C /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -139,15 +157,17 @@
 		8498C97B2731C40800F47F02 /* What-The-Fridge-iOS */ = {
 			isa = PBXGroup;
 			children = (
-				8498C97C2731C40800F47F02 /* AppDelegate.swift */,
-				8498C97E2731C40800F47F02 /* SceneDelegate.swift */,
+				2244496B27604F2C002E3C5F /* GraphQL */,
 				845C3181275213DF0052828C /* Helpers */,
 				84F1AA592740B903008A9D09 /* View Controllers */,
+				8498C97C2731C40800F47F02 /* AppDelegate.swift */,
+				8498C97E2731C40800F47F02 /* SceneDelegate.swift */,
 				8498C9822731C40800F47F02 /* Main.storyboard */,
 				8498C9852731C40C00F47F02 /* Assets.xcassets */,
 				220B50BC275617AC002C3B19 /* GoogleService-Info.plist */,
 				8498C9872731C40C00F47F02 /* LaunchScreen.storyboard */,
 				8498C98A2731C40C00F47F02 /* Info.plist */,
+				2244496927604E0B002E3C5F /* schema.json */,
 			);
 			path = "What-The-Fridge-iOS";
 			sourceTree = "<group>";
@@ -211,6 +231,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8498C9A32731C40C00F47F02 /* Build configuration list for PBXNativeTarget "What-The-Fridge-iOS" */;
 			buildPhases = (
+				22065F4E2761FFC6004FFF9A /* Generate Apollo GraphQL API */,
 				2F01EEC29A51D1E16A5C64FC /* [CP] Check Pods Manifest.lock */,
 				8498C9752731C40800F47F02 /* Sources */,
 				8498C9762731C40800F47F02 /* Frameworks */,
@@ -313,7 +334,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22065F5027620139004FFF9A /* Queries.graphql in Resources */,
 				8498C9892731C40C00F47F02 /* LaunchScreen.storyboard in Resources */,
+				2244496A27604E0B002E3C5F /* schema.json in Resources */,
 				220B50BD275617AC002C3B19 /* GoogleService-Info.plist in Resources */,
 				8498C9862731C40C00F47F02 /* Assets.xcassets in Resources */,
 				8498C9842731C40800F47F02 /* Main.storyboard in Resources */,
@@ -337,6 +360,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		22065F4E2761FFC6004FFF9A /* Generate Apollo GraphQL API */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Generate Apollo GraphQL API";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Don't run this during index builds\nif [ $ACTION = \"indexbuild\" ]; then exit 0; fi\n\nSCRIPT_PATH=\"${PODS_ROOT}/Apollo/scripts\"\ncd \"${SRCROOT}/${TARGET_NAME}\"\n\"${SCRIPT_PATH}\"/run-bundled-codegen.sh codegen:generate --target=swift --includes=./**/*.graphql --localSchemaFile=\"schema.json\" API.swift\n";
+		};
 		2F01EEC29A51D1E16A5C64FC /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -448,11 +489,13 @@
 				84F1AA5D27410C47008A9D09 /* RandomImageViewController.swift in Sources */,
 				8498C97D2731C40800F47F02 /* AppDelegate.swift in Sources */,
 				84F1AA562740B882008A9D09 /* SignUpViewController.swift in Sources */,
+				22065F52276201E1004FFF9A /* API.swift in Sources */,
 				84F1AA5F27410DE1008A9D09 /* ViewController.swift in Sources */,
 				8498C97F2731C40800F47F02 /* SceneDelegate.swift in Sources */,
 				845C3183275216750052828C /* Utilities.swift in Sources */,
 				84F1AA5B2740B955008A9D09 /* HomeViewController.swift in Sources */,
 				227C8431275C8961007133A3 /* Constants.swift in Sources */,
+				22065F5427620232004FFF9A /* Apollo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

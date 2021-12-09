@@ -51,6 +51,16 @@ class LoginViewController: UIViewController {
                 if(err != nil) {
                     self.showError(err!.localizedDescription)
                 } else {
+                    let currentUser = Auth.auth().currentUser
+                    currentUser?.getIDTokenForcingRefresh(true) { idToken, error in
+                      if let error = error {
+                          self.showError(error.localizedDescription)
+                        return;
+                      }
+                        // Send token to your backend via HTTPS
+                        self.connectToGraphQL()
+                        // self.connectToBackend(token: idToken ?? "")
+                    }
                     self.transitionToHome()
                 }
             }
@@ -77,5 +87,55 @@ class LoginViewController: UIViewController {
         let homeViewController = storyboard?.instantiateViewController(withIdentifier: Constants.StoryBoard.homeViewController) as? HomeViewController
         view.window?.rootViewController = homeViewController
         view.window?.makeKeyAndVisible()
+    }
+    
+    struct Response: Codable{
+        let message: String!
+    }
+    
+    func connectToBackend(token: String) {
+        print("here")
+        let urlString = URL(string: "http://localhost:4000/auth/login")!
+        var request = URLRequest(url: urlString)
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        request.httpMethod = "POST"
+
+        URLSession.shared.dataTask(with: request) {(data, response, error) in
+            guard data == nil, error == nil else {
+                print("something went wrong")
+                return
+            }
+        }.resume()
+    }
+    
+    struct Error: Codable {
+        let field: String
+        let message: String
+    }
+    struct FridgeItemInfo: Codable {
+        let brandName: String
+        let ingredients: String
+        let name: String
+        let imgUrl: String
+    }
+    
+    struct FridgeItemInfoResponse: Codable {
+        let errors: [Error]
+        let fridgeItemInfo: FridgeItemInfo
+    }
+    
+    func connectToGraphQL() {
+        Network.shared.apollo.fetch(query: GetAllUsersQuery()) { result in
+            switch result{
+            case .success(let graphQLResult):
+                if let result = graphQLResult.data?.getAllUsers[0].username {
+                    print(result)
+                }
+            case .failure(let error):
+                print("Error: \(error)")
+            }
+
+        }
     }
 }
