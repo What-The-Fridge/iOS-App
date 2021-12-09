@@ -57,8 +57,9 @@ class LoginViewController: UIViewController {
                           self.showError(error.localizedDescription)
                         return;
                       }
-                      // Send token to your backend via HTTPS
-                        self.connectToBackend(token: idToken ?? "")
+                        // Send token to your backend via HTTPS
+                        self.connectToGraphQL()
+                        // self.connectToBackend(token: idToken ?? "")
                     }
                     self.transitionToHome()
                 }
@@ -106,5 +107,35 @@ class LoginViewController: UIViewController {
                 return
             }
         }.resume()
+    }
+    
+    struct Error: Codable {
+        let field: String
+        let message: String
+    }
+    struct FridgeItemInfo: Codable {
+        let brandName: String
+        let ingredients: String
+        let name: String
+        let imgUrl: String
+    }
+    
+    struct FridgeItemInfoResponse: Codable {
+        let errors: [Error]
+        let fridgeItemInfo: FridgeItemInfo
+    }
+    
+    func connectToGraphQL() {
+        Network.shared.apollo.fetch(query: GetAllUsersQuery()) { result in
+            switch result{
+            case .success(let graphQLResult):
+                if let result = graphQLResult.data?.getAllUsers[0].username {
+                    print(result)
+                }
+            case .failure(let error):
+                print("Error: \(error)")
+            }
+
+        }
     }
 }
