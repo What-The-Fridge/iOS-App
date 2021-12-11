@@ -1,8 +1,12 @@
 query GetAllUsers {
   getAllUsers {
-    email
     id
-    username
+    firebaseUserUID
+    firstName
+    lastName
+    imgUrl
+    email
+    tier
     createdAt
     updatedAt
   }

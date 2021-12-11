@@ -21,6 +21,7 @@ target 'What-The-Fridge-iOS' do
   
   # Apollo
   pod 'Apollo'
+  pod "Apollo/WebSocket"
 
   target 'What-The-Fridge-iOSTests' do
     inherit! :search_paths

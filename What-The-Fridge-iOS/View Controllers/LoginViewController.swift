@@ -58,8 +58,7 @@ class LoginViewController: UIViewController {
                         return;
                       }
                         // Send token to your backend via HTTPS
-                        self.connectToGraphQL()
-                        // self.connectToBackend(token: idToken ?? "")
+                        self.getAllUsers()
                     }
                     self.transitionToHome()
                 }
@@ -113,6 +112,7 @@ class LoginViewController: UIViewController {
         let field: String
         let message: String
     }
+    
     struct FridgeItemInfo: Codable {
         let brandName: String
         let ingredients: String
@@ -125,11 +125,11 @@ class LoginViewController: UIViewController {
         let fridgeItemInfo: FridgeItemInfo
     }
     
-    func connectToGraphQL() {
+    func getAllUsers() {
         Network.shared.apollo.fetch(query: GetAllUsersQuery()) { result in
             switch result{
             case .success(let graphQLResult):
-                if let result = graphQLResult.data?.getAllUsers[0].username {
+                if let result = graphQLResult.data?.getAllUsers[0].firstName {
                     print(result)
                 }
             case .failure(let error):
