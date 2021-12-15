@@ -4,6 +4,9 @@
 ### Mac-OS stuff ###
 .DS_Store
 
+### Apollo stuff ###
+*/schema.json
+
 ### Firebase ###
 GoogleService-Info.plist
 .idea

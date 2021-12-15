@@ -10,6 +10,8 @@ import Firebase
 
 struct AuthView: View {
     @State var isLoginMode = false
+    @State var firstName = ""
+    @State var lastName = ""
     @State var email = ""
     @State var password = ""
     @State var statusMessage = ""
@@ -36,14 +38,29 @@ struct AuthView: View {
                         }
                     }
                     
-                    Group {
-                        TextField("Email", text: $email)
-                            .keyboardType(.emailAddress)
-                            .autocapitalization(.none)
-                        SecureField("Password", text: $password)
+                    if(isLoginMode){
+                        Group {
+                            TextField("Email", text: $email)
+                                .keyboardType(.emailAddress)
+                                .autocapitalization(.none)
+                            SecureField("Password", text: $password)
+                        }
+                        .padding(12)
+                        .background(Color.white)
+                    } else {
+                        Group {
+                            TextField("Firstname", text: $firstName)
+                                .autocapitalization(.words)
+                            TextField("Lastname", text: $lastName)
+                                .autocapitalization(.words)
+                            TextField("Email", text: $email)
+                                .keyboardType(.emailAddress)
+                                .autocapitalization(.none)
+                            SecureField("Password", text: $password)
+                        }
+                        .padding(12)
+                        .background(Color.white)
                     }
-                    .padding(12)
-                    .background(Color.white)
                     
                     Button {
                         handleAction()
@@ -80,7 +97,8 @@ struct AuthView: View {
     private func loginUser() {
         Auth.auth().signIn(withEmail: email, password: password) { result, err in
             if let err = err {
-                self.statusMessage = "Failed to login user: \(err)"
+                let errorMessage = err.localizedDescription.components(separatedBy: "\"")[0]
+                self.statusMessage = "Failed to login user: \(errorMessage)"
                 return
             }
             
@@ -91,11 +109,38 @@ struct AuthView: View {
     private func createNewAccount() {
         Auth.auth().createUser(withEmail: email, password: password) { result, err in
             if let err = err {
-                self.statusMessage = "Failed to create user: \(err)"
+                let errorMessage = err.localizedDescription.components(separatedBy: "\"")[0]
+                self.statusMessage = "Failed to create user: \(errorMessage)"
                 return
             }
             
+            let currentUser : User! = Auth.auth().currentUser
+            currentUser?.getIDTokenForcingRefresh(true) { idToken, err in
+                if let err = err {
+                    self.statusMessage = "Failed to create user: \(err)"
+                    return;
+                }
+                //authenticate with fb & create a new user in pg
+                CustomInterceptor.token = idToken!
+                createNewUserPostgres(uid: result?.user.uid ?? "", firstName: firstName, lastName: lastName, email: email)
+            }
+            
             self.statusMessage = "Successfully created user: \(result?.user.uid ?? "")"
+        }
+    }
+    
+    func createNewUserPostgres(uid: String, firstName: String, lastName: String, email: String) {
+        let input = UserInput(firebaseUserUid: uid, firstName: firstName, lastName: lastName, email: email)
+        Network.shared.apollo.perform(mutation: CreateUserMutation(input: input)) { result in
+            switch result{
+            case .success(let graphQLResult):
+                if let result = graphQLResult.data?.createUser.user?.firebaseUserUid {
+                    print(result)
+                }
+            case .failure(let error):
+                print("Error: \(error)")
+            }
+            
         }
     }
 }
