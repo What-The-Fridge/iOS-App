@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Firebase
+import FirebaseStorage
 
 struct AuthView: View {
     @State var isLoginMode = false
@@ -15,6 +16,9 @@ struct AuthView: View {
     @State var email = ""
     @State var password = ""
     @State var statusMessage = ""
+    @State var imagePickerShowed = false
+    @State var image: UIImage?
+    @State var imageSize = 64
     
     var body: some View {
         NavigationView {
@@ -26,15 +30,36 @@ struct AuthView: View {
                             .tag(true)
                         Text("Create Account")
                             .tag(false)
-                    }.pickerStyle(SegmentedPickerStyle())
+                    }
+                    .pickerStyle(SegmentedPickerStyle())
+                    .onChange(of: isLoginMode) { _ in
+                        firstName = ""
+                        lastName = ""
+                        email = ""
+                        password = ""
+                        statusMessage = ""
+                    }
                     
                     if !isLoginMode {
                         Button {
-                            
+                            imagePickerShowed.toggle()
                         } label: {
-                            Image(systemName: "person.fill")
-                                .font(.system(size: 64))
-                                .padding()
+                            
+                            VStack{
+                                if let image = self.image {
+                                    Image(uiImage: image)
+                                        .resizable()
+                                        .frame(width: CGFloat(imageSize)*2, height: CGFloat(imageSize)*2)
+                                        .scaledToFill()
+                                        .cornerRadius(CGFloat(imageSize))
+                                } else {
+                                    Image(systemName: "person.fill")
+                                        .font(.system(size: CGFloat(imageSize)))
+                                        .padding()
+                                }
+                            }
+                            .overlay(RoundedRectangle(cornerRadius: CGFloat(imageSize))
+                                        .stroke(Color.black, lineWidth: 3))
                         }
                     }
                     
@@ -84,6 +109,9 @@ struct AuthView: View {
             .background(Color(.init(white: 0, alpha: 0.05))
                             .ignoresSafeArea())
         }
+        .fullScreenCover(isPresented: $imagePickerShowed, onDismiss: nil) {
+            ImagePicker(image: $image)
+        }
     }
     
     private func handleAction() {
@@ -114,6 +142,8 @@ struct AuthView: View {
                 return
             }
             
+            self.storeImageToFirebase()
+            
             let currentUser : User! = Auth.auth().currentUser
             currentUser?.getIDTokenForcingRefresh(true) { idToken, err in
                 if let err = err {
@@ -129,7 +159,11 @@ struct AuthView: View {
         }
     }
     
-    func createNewUserPostgres(uid: String, firstName: String, lastName: String, email: String) {
+    private func storeImageToFirebase() {
+        Storage.storage()
+    }
+    
+    private func createNewUserPostgres(uid: String, firstName: String, lastName: String, email: String) {
         let input = UserInput(firebaseUserUid: uid, firstName: firstName, lastName: lastName, email: email)
         Network.shared.apollo.perform(mutation: CreateUserMutation(input: input)) { result in
             switch result{
@@ -140,7 +174,6 @@ struct AuthView: View {
             case .failure(let error):
                 print("Error: \(error)")
             }
-            
         }
     }
 }
