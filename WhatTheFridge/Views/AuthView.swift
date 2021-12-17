@@ -142,29 +142,48 @@ struct AuthView: View {
                 return
             }
             
-            self.storeImageToFirebase()
-            
-            let currentUser : User! = Auth.auth().currentUser
-            currentUser?.getIDTokenForcingRefresh(true) { idToken, err in
-                if let err = err {
-                    self.statusMessage = "Failed to create user: \(err)"
-                    return;
-                }
-                //authenticate with fb & create a new user in pg
-                CustomInterceptor.token = idToken!
-                createNewUserPostgres(uid: result?.user.uid ?? "", firstName: firstName, lastName: lastName, email: email)
-            }
+            self.storeUserData()
             
             self.statusMessage = "Successfully created user: \(result?.user.uid ?? "")"
         }
     }
     
-    private func storeImageToFirebase() {
-        Storage.storage()
+    private func storeUserData() {
+        guard let userUid = Auth.auth().currentUser?.uid
+        else{return}
+
+        let ref = Storage.storage().reference(withPath: userUid)
+        guard let image = self.image?.jpegData(compressionQuality: 0.5) else {return}
+
+        ref.putData(image, metadata: nil) {
+            metadata, err in
+            if let err = err {
+                self.statusMessage = "Failed to put image to firebase storage \(err)"
+            } else {
+                ref.downloadURL { url, err in
+                    if let err = err {
+                        self.statusMessage = "Failed to get image url from firebase \(err)"
+                    } else {
+                        self.statusMessage = "successfully store the image with url \(url?.absoluteString ?? "")"
+                        
+                        let currentUser : User! = Auth.auth().currentUser
+                        currentUser?.getIDTokenForcingRefresh(true) { idToken, err in
+                            if let err = err {
+                                self.statusMessage = "Failed to authenticate with firebase: \(err)"
+                                return;
+                            }
+                            //authenticate with fb & create a new user in pg
+                            CustomInterceptor.token = idToken!
+                            createNewUserPostgres(uid: userUid, firstName: firstName, lastName: lastName, email: email, imgUrl: url?.absoluteString ?? "")
+                        }
+                    }
+                }
+            }
+        }
     }
     
-    private func createNewUserPostgres(uid: String, firstName: String, lastName: String, email: String) {
-        let input = UserInput(firebaseUserUid: uid, firstName: firstName, lastName: lastName, email: email)
+    private func createNewUserPostgres(uid: String, firstName: String, lastName: String, email: String, imgUrl: String?) {
+        let input = UserInput(firebaseUserUid: uid, firstName: firstName, lastName: lastName, email: email, imgUrl: imgUrl)
         Network.shared.apollo.perform(mutation: CreateUserMutation(input: input)) { result in
             switch result{
             case .success(let graphQLResult):
